@@ -7,9 +7,9 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
-  <body style="overflow:hidden;">
+  <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=100vw height=100vh style="width:100vw; height:100vh;"></canvas>
+      <canvas id="unity-canvas" width=1920 height=1080></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -58,9 +58,9 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/GitHub.loader.js";
       var config = {
-        dataUrl: buildUrl + "/GitHub.data",
-        frameworkUrl: buildUrl + "/GitHub.framework.js",
-        codeUrl: buildUrl + "/GitHub.wasm",
+        dataUrl: buildUrl + "/GitHub.data.gz",
+        frameworkUrl: buildUrl + "/GitHub.framework.js.gz",
+        codeUrl: buildUrl + "/GitHub.wasm.gz",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Yes We Are Mad",
         productName: "UnityToWeb_Test",
