@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=1920 height=1080></canvas>
+    <div id="unity-container" class="unity-desktop" style="height:100%; width:100%;">
+      <canvas id="unity-canvas"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -17,11 +17,6 @@
         </div>
       </div>
       <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">UnityToWeb_Test</div>
-      </div>
     </div>
     <script>
       var container = document.querySelector("#unity-container");
@@ -84,6 +79,8 @@
       } else {
         canvas.style.width = window.innerWidth;
         canvas.style.height = window.innerHeight;
+        container.style.width = window.innerWidth;
+        container.style.height = window.innerHeight;
       }
       loadingBar.style.display = "block";
 
