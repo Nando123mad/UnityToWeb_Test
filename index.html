@@ -7,6 +7,9 @@
   </head>
   <body style="text-align: center; margin:0; height:100vh; width: 100vw;">
     <canvas id="unity-canvas" style="width: 100%; height: 100%; background: url('Build/GitHub.jpg') center / cover"></canvas>
+    
+    <div>fps: <span id="fps" style="font-size: 36px; color:chartreuse;"></span></div>
+    
     <script src="Build/GitHub.loader.js"></script>
     <script>
       createUnityInstance(document.querySelector("#unity-canvas"), {
@@ -20,6 +23,20 @@
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
+
+      const fpsElem = document.querySelector("#fps");
+
+      let then = 0;
+      function render(now) {
+        now *= 0.001;                          // convert to seconds
+        const deltaTime = now - then;          // compute time since last frame
+        then = now;                            // remember time for next frame
+        const fps = 1 / deltaTime;             // compute frames per second
+        fpsElem.textContent = fps.toFixed(1);  // update fps display
+        
+        requestAnimationFrame(render);
+      }
+      requestAnimationFrame(render);
     </script>
   </body>
 </html>
